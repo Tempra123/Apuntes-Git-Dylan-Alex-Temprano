@@ -1,23 +1,45 @@
 # Trabajo individula 
  Dylan Alex Temprano Villarpando
 CEll : 71426919  
-##Clase 3
+##Clase 4
 
-###  GITHUB Y SSH
+###  REMOTE, SSH MULTIPLE YCHECKOUT
 
-Que es Github
+1. Git Remote (conectar con repositorios)
 
-GitHub es una plataforma en la nube y  red social para desarrolladores que permite alojar, gestionar y colaborar en proyectos de software utilizando Git. 
+Git por sí solo trabaja localmente, pero con git remote le dices: “¿a dónde voy a enviar o de dónde voy a traer cambios?”
 
-Git vs Github
+git remote -v → ves a qué repositorio estás conectado
+git remote add origin URL → conectas tu repo local con uno en la nube
+git remote set-url origin URL → cambias esa conexión
 
-Git es el sistema de control de versiones que crea los "puntos de guardado", y GitHub es el servidor
-donde esos puntos se almacenan y se socializan con el mundo.
+2. SSH y múltiples cuentas
 
-SSH vs HTTPS 
-HTTPS: Cuando clonamos y queremos usar un repositorio con HTTPS, este nos pedira autenticarnos cada vez, hasta pidiendonos un token. Lo cual hace que sea cansino y molesto.
+SSH es como una llave segura para conectarte a GitHub sin poner contraseña.
 
-Crear un repositorio en Github 
+Cada cuenta necesita su propia “llave” Si tienes varias cuentas → necesitas múltiples SSH
+Analogía:
 
-1.Vas a tu apartado de repositorios en https://github.com/Tu-user? tab=repositories y Click en “New”
-2.Pones el nombre de tu repositorio, y si quieres una descripción. Y luego click en “Create Repository”
+cada cuenta = una puerta
+cada SSH = una llave distinta
+
+Para evitar conflictos:
+
+creas varias keys
+configuras un archivo config
+usas alias como github-miname
+
+3. Configuración local vs global
+--global → aplica para todos los proyectos
+sin --global → solo para ese repo
+
+4. Git Checkout (viajar en el tiempo)
+
+Es el comando para moverte en el historial o entre ramas.
+
+Sirve para:
+
+ver código antiguo
+recuperar cosas
+probar sin romper nada
+cambiar de rama
