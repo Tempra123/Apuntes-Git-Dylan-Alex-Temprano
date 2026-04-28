@@ -1,7 +1,106 @@
 # Trabajo individula 
  Dylan Alex Temprano Villarpando
-CEll : 71426919  
-##Clase 4
+CEll : 71426919 
+## Clase 1 – Introducción a Git
+¿Qué es Git?
+Git es un Sistema de Control de Versiones Distribuido (VCS).
+
+Permite:
+
+Guardar archivos
+Mantener un historial de cambios
+Trabajar de manera local sin depender de internet
+¿Cómo nació Git?
+Git fue creado por Linus Torvalds.
+
+## Configuraciones básicas
+Configurar nombre de usuario:
+
+git config --global user.name "Tu Nombre"
+Configurar correo:
+
+git config --global user.email "tu@correo.com"
+### Archivos importantes en un repositorio
+Todo repositorio debería tener:
+
+README.md → Documentación del proyecto
+.gitignore → Archivos que Git debe ignorar
+## Clase 2 -States y Commits
+
+ Estados de Git
+Git maneja 3 estados principales:
+
+### Directorio de trabajo (Working Directory)
+Donde editas archivos.
+Estados:
+Untracked: archivo nuevo sin seguimiento
+Modified: archivo ya existente modificado
+### Stage Area (Staging)
+Área donde eliges qué cambios guardar.
+Comandos:
+git add <archivo> → agrega uno
+git add . → agrega todos
+git restore --staged <archivo> → quita del stage
+### Repositorio local (Commit)
+Donde se guardan los cambios en el historial.
+Comandos:
+git commit -m "mensaje"
+git reset --soft HEAD~1 → deshacer último commit
+### Otros comandos importantes
+git restore <archivo> → vuelve al estado original (borra cambios)
+.gitignore → evita que Git rastree archivos
+ ### Buenas practicas 
+Hacer commits pequeños (atómicos)
+Usar mensajes claros:
+Verbos: Add, Fix, Change, Remove
+Máximo ~50 caracteres
+
+### Escribe buenos commits
+Prefijos:
+feat: para una nueva característica para el usuario.
+fix: para un bug que afecta al usuario.
+perf: para cambios que mejoran el rendimiento del sitio.
+build: para cambios en el sistema de build, tareas de despliegue o instalación.
+ci: para cambios en la integración continua.
+docs: para cambios en la documentación.
+refactor: para refactorización del código como cambios de nombre de variables o funciones.
+style: para cambios de formato, tabulaciones, espacios o puntos y coma, etc; no afectan al
+usuario.
+test: para tests o refactorización de uno ya existente.
+
+## clase 3 -GitHub y SSH
+
+## Git vs GitHub
+Git → sistema de control de versiones
+GitHub → plataforma en la nube para alojar repositorios
+## SSH vs HTTPS
+HTTPS → pide contraseña/token siempre
+SSH → usa claves, más cómodo
+recomendacio: usar SSH
+
+## Configurar SSH
+Generar clave:
+ ssh-keygen -t ed25519 -C "tu-email"
+Copiar:
+ cat ~/.ssh/id_ed25519.pub
+Pegarlo en GitHub (Settings → SSH Keys)
+Verificar:
+ ssh -T git@github.com
+## Trabajar con repositorios
+Crear repo en GitHub
+Conectar repo local:
+ git remote add origin <url>
+ git branch -M main 
+ git push -u origin main
+
+## Comandos clave
+Clonar:
+git clone <url>
+Subir cambios:
+git push origin <rama>
+Bajar cambios:
+git pull origin <rama>
+## Clase 4
 
 ###  REMOTE, SSH MULTIPLE YCHECKOUT
 
