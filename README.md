@@ -191,3 +191,61 @@ Para nuevas funcionalidades
 Nacen de develop
 Vuelven a develop 
 
+## clase 6 Git: Merge, Fetch, Pull, Push
+
+Permite unir dos ramas en una sola, integrando sus commits.
+
+ git merge rama
+
+--no-ff (No Fast Forward)
+git merge --no-ff rama
+
+✔️ Fuerza la creación de un commit de merge
+✔️ Mantiene el historial de ramas visible
+✔️ Evita que Git “salte” directamente sin dejar rastro
+
+💡 Ideal cuando quieres mantener el historial claro (Gitflow) 
+
+### --no-ff (No Fast Forward)
+ git merge --no-ff rama
+
+✔️ Fuerza la creación de un commit de merge
+✔️ Mantiene el historial de ramas visible
+✔️ Evita que Git “salte” directamente sin dejar rastro
+
+💡 Ideal cuando quieres mantener el historial claro (Gitflow)
+
+### ¿Qué es git pull?
+
+Trae los cambios del remoto y los aplica automáticamente.
+
+git pull origin rama
+
+✔️ = fetch + merge
+✔️ Actualiza tu rama local
+
+⚠️ Puede generar conflictos si hay cambios incompatibles
+
+### Primera vez (importante)
+git push -u origin rama
+
+✔️ Vincula tu rama local con la remota
+✔️ Luego puedes usar solo git push
+
+⚠️ Ojo: en tu apunte estaba mal (git pull -u ❌)
+
+### Flujo de trabajo (sin pull requests)
+
+git checkout develop        # Ir a develop
+git fetch                   # Ver cambios remotos
+git pull origin develop     # Actualizar develop
+
+git merge --no-ff rama      # Fusionar tu rama
+
+# Resolver conflictos manualmente si aparecen
+
+git add .                   # Preparar cambios
+git commit                  # Confirmar merge
+
+git branch -D rama          # Eliminar rama local
+git push origin develop     # Subir cambios
