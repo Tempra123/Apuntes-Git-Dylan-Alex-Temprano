@@ -142,3 +142,52 @@ ver código antiguo
 recuperar cosas
 probar sin romper nada
 cambiar de rama
+
+## Clase 5 RAMAS Y GITFLOW BÁSICO 
+
+¿QUÉ SON LAS RAMAS?
+
+Las ramas son una de las principales utilidades que
+disponemos en Git para llevar un mejor control del código.
+
+### Comandos básicos de ramas
+Ver ramas :
+git branch
+🌱 Crear rama:
+git branch nombre-rama
+❌ Eliminar rama:
+git branch -D nombre-rama
+🔄 Cambiar de rama:
+git checkout nombre-rama
+👉 O crear y cambiar al mismo tiempo:
+git checkout -b nombre-rama
+
+### Git Checkout vs Git Switch
+git checkout → hace muchas cosas (ramas, commits, archivos)
+git switch → solo para ramas (más seguro y moderno)
+ 
+### Gitflow básico
+🧠 ¿Qué es?
+
+Es una forma ordenada de trabajar con ramas en equipo.
+
+👉 Sin Gitflow:
+
+Todo desordenado 😵
+
+👉 Con Gitflow:
+
+Todo organizado 😎
+🌳 Ramas principales
+🟢 main
+Código en producción
+Lo que ya funciona
+🟡 develop
+Donde se trabaja normalmente
+Base de nuevas funcionalidades
+🔧 Ramas de apoyo
+🔹 feature/*
+Para nuevas funcionalidades
+Nacen de develop
+Vuelven a develop 
+
