@@ -250,7 +250,7 @@ git commit                  # Confirmar merge
 git branch -D rama          # Eliminar rama local
 git push origin develop     # Subir cambios
 
-## Pull Requests (PRs)
+## clase 7 Pull Requests (PRs)
 
 ¿Qué son los Pull Requests?
 
