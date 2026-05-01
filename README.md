@@ -249,3 +249,87 @@ git commit                  # Confirmar merge
 
 git branch -D rama          # Eliminar rama local
 git push origin develop     # Subir cambios
+
+##  Pull Requests (PRs)
+
+¿Qué son los Pull Requests?
+
+También llamados PRs, son la forma profesional de trabajar con GitHub.
+
+ -Un Pull Request es una solicitud para:
+
+Revisar cambios
+Discutirlos
+Y luego fusionarlos (merge) al código principal
+
+ No modificas directamente main o develop, primero pides revisión.
+
+### ¿Cómo crear un PR?
+Haces cambios en una rama
+Subes tu rama:
+git push origin rama
+Vas a GitHub
+Creas el Pull Request
+Esperas revisión y aprobación
+
+### Flujo de trabajo (con Pull Requests)
+git checkout develop
+git fetch
+git pull origin develop
+
+git checkout -b rama        # Crear nueva rama
+
+# Trabajas en tu rama
+
+git push -u origin rama     # Primera vez
+
+# Si develop cambió mientras trabajabas:
+git checkout develop
+git pull origin develop
+
+git checkout rama
+git merge develop           # Actualizar tu rama
+
+# Resolver conflictos si hay
+
+git add .
+git commit
+
+git push origin rama        # Subir cambios actualizados
+
+Por qué usar Pull Requests?
+
+Aunque puedes trabajar sin PRs, NO es recomendable en equipo.
+
+### Problemas sin PRs:
+Cualquiera puede hacer merge directo ❌
+Riesgo de errores ❌
+Código sin revisión ❌
+Ventajas de los PRs:
+
+✔️ Revisión de código
+✔️ Discusión entre el equipo
+✔️ Mayor seguridad
+✔️ Mejor organización
+✔️ Control de quién y qué se integra
+
+💡 Obliga a validar antes de mezclar código
+
+### Protección del repositorio
+
+Para evitar merges directos:
+
+Proteger ramas (branch protection)
+Requerir revisiones antes de merge
+Limitar permisos
+
+👉 Esto se configura en GitHub
+
+¿Cómo contribuir sin acceso?
+
+Si no eres colaborador:
+
+Haces un fork del repositorio
+Trabajas en tu copia
+Haces push
+Creas un PR al repo original
