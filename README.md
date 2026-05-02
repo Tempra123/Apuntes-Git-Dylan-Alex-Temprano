@@ -333,3 +333,75 @@ Haces un fork del repositorio
 Trabajas en tu copia
 Haces push
 Creas un PR al repo original
+
+## Clase 8 Git Stash, borrar ramas y Git Diff
+
+¡Claro que sí! He estructurado y pulido tu contenido para que sea mucho más profesional, fácil de leer y técnicamente preciso. He organizado la información siguiendo el flujo de trabajo lógico de un desarrollador.
+
+### Gestión de Cambios y Conflictos en Git
+Es muy común que otro Pull Request (PR) se apruebe y fusione antes que el tuyo. Cuando esto pasa, la rama principal avanza y tu código puede quedar desactualizado o generar conflictos. Aquí te explico cómo manejarlo como un profesional.
+
+### ¿Qué hacer si aprobaron otro PR antes que el mío?
+Si el PR de un compañero cambió archivos que tú también tocaste, debes sincronizar tu rama para evitar problemas al integrar. El flujo recomendado es:
+
+Guardar cambios temporales (usando stash).
+
+Actualizar tu rama local con los cambios de la rama principal (main o develop).
+
+Recuperar tus cambios y resolver conflictos si aparecen.
+
+### Git Stash: Tu "baúl" de cambios temporales
+ git stash te permite guardar tus modificaciones actuales en una pila provisional sin necesidad de crear un commit. Es ideal para limpiar tu área de trabajo rápidamente.
+
+### ¿Cuándo usarlo?
+
+Para cambiar de rama sin perder lo que llevas hecho.
+
+Para actualizar tu código base (git pull) sin que tus cambios locales estorben.
+
+Para guardar trabajo incompleto de forma segura.
+
+### Comandos esenciales:
+
+ git stash: Guarda los cambios actuales.
+
+ git stash -m "mensaje": Guarda los cambios con una descripción (muy recomendado).
+
+ git stash list: Lista todos los estados guardados.
+
+ git stash pop: Recupera el último stash, lo aplica a tu código y lo elimina de la lista.
+
+### 3. Git Diff: Compara antes de actuar
+Antes de hacer un commit o un merge, es vital revisar qué has cambiado exactamente para no subir código basura o errores accidentales.
+comando:      funcion: 
+git diff,             Muestra cambios locales no preparados (sin git add).
+git diff <archivo>    Revisa los cambios de un archivo específico.
+git diff --staged     Muestra los cambios ya preparados para el commit.
+git diff rama1..rama2 Compara las diferencias totales entre dos ramas.
+
+### Buenas prácticas post-merge
+Una vez que tu PR ha sido aprobado y fusionado exitosamente, es importante mantener la higiene del repositorio eliminando las ramas que ya no se usan.
+
+Regla de oro: Un proyecto limpio es un proyecto fácil de mantener.
+
+Borrar rama local:
+git branch -d nombre-de-la-rama
+(Solo funciona si la rama ya fue fusionada).
+
+Borrar rama remota:
+git push origin --delete nombre-de-la-rama
+
+### Resumen del flujo de actualización:
+Si necesitas actualizar tu rama porque alguien más mergeó antes:
+
+git stash (Guardas lo tuyo)
+
+git checkout main (Vas a la rama principal)
+
+git pull origin main (Traes lo nuevo)
+
+git checkout tu-rama (Vuelves a tu tarea)
+
+git merge main (Integras lo nuevo en tu rama)
+
+git stash pop (Recuperas tus cambios y resuelves conflictos si existen)
