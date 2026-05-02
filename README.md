@@ -336,8 +336,6 @@ Creas un PR al repo original
 
 ## Clase 8 Git Stash, borrar ramas y Git Diff
 
-¡Claro que sí! He estructurado y pulido tu contenido para que sea mucho más profesional, fácil de leer y técnicamente preciso. He organizado la información siguiendo el flujo de trabajo lógico de un desarrollador.
-
 ### Gestión de Cambios y Conflictos en Git
 Es muy común que otro Pull Request (PR) se apruebe y fusione antes que el tuyo. Cuando esto pasa, la rama principal avanza y tu código puede quedar desactualizado o generar conflictos. Aquí te explico cómo manejarlo como un profesional.
 
